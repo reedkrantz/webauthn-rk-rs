@@ -187,7 +187,7 @@ impl AuthenticatorBackend for MozillaAuthenticator {
             pub_cred_params,
             exclude_list: vec![],
             user_verification_req: UserVerificationRequirement::Required,
-            resident_key_req: ResidentKeyRequirement::Discouraged,
+            resident_key_req: ResidentKeyRequirement::Required,
 
             pin: None,
             extensions: AuthenticationExtensionsClientInputs {

@@ -581,9 +581,9 @@ impl<T: Token, U: UiCallback> AuthenticatorBackendHashedClientData
 
         let req_options = if let AuthToken::UvTrue = auth_token {
             // No pin_uv_auth_param, but verification is configured, so use it
-            Some(BTreeMap::from([("uv".to_owned(), true)]))
+            Some(BTreeMap::from([("uv".to_owned(), true), ("rk".to_owned(), true)]))
         } else {
-            None
+            Some(BTreeMap::from([("rk".to_owned(), true)]))
         };
         let (pin_uv_auth_proto, pin_uv_auth_param) = auth_token.into_pin_uv_params();
 
